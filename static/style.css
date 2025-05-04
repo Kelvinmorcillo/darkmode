@@ -1,0 +1,53 @@
+/* Ensure html and body take up full viewport height and have no default spacing */
+html, body {
+    height: 100%; /* Makes the container tall enough for vertical centering */
+    margin: 0; /* Removes default browser margin */
+    padding: 0; /* Removes default browser padding */
+    background-color: rgb(28, 28, 28); /* Your background */
+    color: white; /* Default text color */
+
+
+/* Make the body a flex container to center its children */
+body {
+    display: flex; /* Enables Flexbox */
+    flex-direction: column; /* Stacks children vertically (h2 above h3) */
+    justify-content: center; /* Centers children vertically */
+    align-items: center; /* Centers children horizontally */
+    min-height: 100%; /* Fallback for height, ensures body is at least full height */
+    text-align: center; /* Ensures text *within* the h2/h3 is also centered */
+}
+
+   
+h1 {
+   text-align: center;
+   }
+h2 {
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   text-align: center;
+   color: rgb(146, 134, 134);
+   font-size: 40px;
+   }
+
+/* You might want this for the date on the homepage */
+h3 {
+   text-align: center;
+   color: rgb(180, 180, 180); 
+   font-style: bold;
+   font-family: cascadia code;
+   font-size: 20px; 
+}
+
+p {
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   text-align: center;
+   color: rgb(146, 134, 134);
+   font-size: 20px;
+   }
+a {
+   color: white;
+   } 
+
+a:hover {
+   color: rgba(203, 69, 28, 0.749);
+}   
+}
