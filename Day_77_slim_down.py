@@ -124,9 +124,9 @@ def redirect_bye():
 from flask import Flask, redirect
 import datetime
 import os
-import locale
+#import locale
 
-locale.setlocale(locale.LC_TIME, 'pt_BR.UTF-8')
+#locale.setlocale(locale.LC_TIME, 'pt_BR.UTF-8')
 app = Flask(__name__)
 
 # --- Calculate absolute path to template folder ---
