@@ -1,11 +1,11 @@
 # Exported from Render on 2025-05-04T11:42:09Z
 services:
-- type: web
-  name: flasktest
-  runtime: static
-  repo: https://github.com/Kelvinmorcillo/flasktest
-  buildCommand: pip install -r requirements.txt
-  staticPublishPath: ./
-  startCommand: python Day_77_slim_down.py
-version: "1"
+services:
+  - type: web
+    name: beat1
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python Day_77_slim_down.py
+    healthCheckPath: /
  
