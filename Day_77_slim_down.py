@@ -15,7 +15,7 @@ import os # <--- Make sure os is imported
 
 app = Flask(__name__)
 # ... rest of your code ...
-
+#flasksucks
 
 # --- Calculate absolute path to template folder ---
 script_dir = os.path.dirname(os.path.abspath(__file__))
