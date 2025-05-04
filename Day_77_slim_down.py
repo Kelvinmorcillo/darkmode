@@ -121,65 +121,6 @@ def redirect_hello():
 @app.route('/bye')
 def redirect_bye():
     return redirect('/you-say-bye')
-from flask import Flask, redirect
-import datetime
-import os
-#import locale
-
-#locale.setlocale(locale.LC_TIME, 'pt_BR.UTF-8')
-app = Flask(__name__)
-
-# --- Calculate absolute path to template folder ---
-script_dir = os.path.dirname(os.path.abspath(__file__))
-template_folder = os.path.join(script_dir, "template")  # Assumes folder is named 'template'
-
-@app.route('/')
-def index():
-    page = get_page("index.html")  # Call the helper
-    if page is None:
-        return "Error: index.html template not found!", 404
-    page = page.replace("{title}", "Beatles")
-    page = page.replace("{text}", "Esse é o indice")
-    page = page.replace("{date}", str(datetime.date.today()))  # Example date
-    return page
-
-def get_page(filename):
-    """Reads content from a file in the template folder."""
-    filepath = os.path.join(template_folder, filename)
-    try:
-        with open(filepath, "r") as f:
-            page_content = f.read()
-        return page_content
-    except FileNotFoundError:
-        print(f"ERROR: Template file not found at {filepath}")
-        return None
-    except Exception as e:
-        print(f"ERROR: Could not read file {filepath}: {e}")
-        return None
-
-@app.route('/and-i-say-hello')
-def hello_page():
-    page = get_page('index.html')
-    page = page.replace("{title}", 'hello')
-    page = page.replace("{date}", datetime.datetime.now().strftime("%H:%M:%S Dia %d de %B de %Y"))
-    page = page.replace("{text}", 'hello')
-    return page
-
-@app.route('/you-say-bye')
-def bye_page():
-    page = get_page('index.html')
-    page = page.replace("{title}", 'bye')
-    page = page.replace("{date}", datetime.datetime.now().strftime("%H:%M:%S Dia %d de %B de %Y"))
-    page = page.replace("{text}", 'bye')
-    return page
-
-@app.route('/hello')
-def redirect_hello():
-    return redirect('/and-i-say-hello')
-
-@app.route('/bye')
-def redirect_bye():
-    return redirect('/you-say-bye')
 
 # --- Standard Run Settings ---
 if __name__ == "__main__":
