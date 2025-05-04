@@ -2,9 +2,20 @@ from flask import Flask, redirect
 import datetime
 from datetime import date # Keep this if you use it for the date replacement
 import os # <--- Make sure os is imported
-import locale
-locale.setlocale(locale.LC_TIME, 'pt_BR.UTF-8')
+# import locale # <-- Comment out
+
+# --- Try setting the locale for Portuguese time formatting ---
+# locale_string = 'Portuguese_Portugal.1252' # <-- Comment out
+
+# try: # <-- Comment out
+#     locale.setlocale(locale.LC_TIME, locale_string) # <-- Comment out
+#     print(f"Successfully set locale to {locale_string}") # <-- Comment out
+# except locale.Error as e: # <-- Comment out
+#     print(f"Warning: Could not set locale to {locale_string}. Date formatting might remain in English. Error: {e}") # <-- Comment out
+
 app = Flask(__name__)
+# ... rest of your code ...
+
 
 # --- Calculate absolute path to template folder ---
 script_dir = os.path.dirname(os.path.abspath(__file__))
