@@ -1,1 +1,1 @@
-web: python Day_77_slim_down.py
+web: python main.py
